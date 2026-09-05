@@ -111,7 +111,7 @@ val linuxExecutableAarch64 =
 val alpineExecutableAmd64 =
   tasks.register<NativeImageBuild>("alpineExecutableAmd64") {
     configure(Target.AlpineLinuxAmd64)
-    extraNativeImageArgs.addAll("--static", "--libc=musl")
+    extraNativeImageArgs.addAll("--static", "--libc=musl", "-H:ThreadStackSize=8m")
   }
 
 val windowsExecutableAmd64 =
